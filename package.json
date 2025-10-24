@@ -21,14 +21,19 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@langchain/core": "^0.3.78",
-    "@langchain/langgraph": "^0.4.9",
-    "@langchain/openai": "^0.6.16",
+    "@langchain/community": "^0.3.0",
+    "@langchain/core": "^0.3.0",
+    "@langchain/langgraph": "^0.3.0",
+    "@langchain/openai": "^0.3.0",
     "@nestjs/common": "^11.1.6",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.1.6",
     "@nestjs/platform-express": "^11.1.6",
-    "langchain": "^0.3.36",
+    "cheerio": "^1.1.2",
+    "langchain": "^0.3.0",
+    "langsmith": "^0.3.74",
+    "last": "^1.1.0",
+    "openai": "^4.62.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"

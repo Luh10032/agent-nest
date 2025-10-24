@@ -6,7 +6,7 @@ import { LlmService } from './llm/llm.service';
 export class AppController {
   constructor(private readonly appService: AppService,
     private readonly llmService: LlmService
-  ) {}
+  ) { }
 
   @Get()
   getHello(): string {
@@ -14,21 +14,22 @@ export class AppController {
   }
 
   @Post('chat')
-    async getLlm(@Body() body: MessageBody): Promise<string> {
+  async getLlm(@Body() body: MessageBody): Promise<string> {
     console.log(body);
-    const result = await this.llmService.chat(body.msg);
+    const result = await this.llmService.chatV3(body.msg, body.threadId, { searchUrl: body.url });
     return result;
   }
 
   @Post('chatV2')
   async chatV2(@Body() body: MessageBody): Promise<string> {
-  console.log(body);
-  const result = await this.llmService.chatV2(body.msg,body.threadId);
-  return result;
-}
+    console.log(body);
+    const result = await this.llmService.chatV2(body.msg, body.threadId);
+    return result;
+  }
 }
 
-type MessageBody={
+type MessageBody = {
   msg: string
   threadId: string
+  url?: string
 }
